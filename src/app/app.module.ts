@@ -8,16 +8,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { MarketListComponent } from './components/market-list/market-list.component';
 import { MarketDetailsComponent } from './components/market-details/market-details.component';
+import { MarketCreateComponent } from './components/market-create/market-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarketListComponent,
-    MarketDetailsComponent
+    MarketDetailsComponent,
+    MarketCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,10 @@ import { MarketDetailsComponent } from './components/market-details/market-detai
     MatFormFieldModule,
     MatProgressBarModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

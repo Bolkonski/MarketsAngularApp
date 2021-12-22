@@ -4,6 +4,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { RequestQueryBuilder } from '@nestjsx/crud-request';
 import { Market } from 'src/app/models/market';
 import { MarketService } from 'src/app/services/market.service';
+import { MarketCreateComponent } from '../market-create/market-create.component';
 import { MarketDetailsComponent } from '../market-details/market-details.component';
 
 @Component({
@@ -16,6 +17,7 @@ export class MarketListComponent implements OnInit {
     'symbol',
     'name',
     'industry',
+    'country'
   ];
   displayedColumns: string[] = [
     ...this.fields,
@@ -70,6 +72,10 @@ export class MarketListComponent implements OnInit {
       {
         data: market,
       });
+  }
+
+  createMarket():void{
+    this.dialog.open(MarketCreateComponent);
   }
 
 }

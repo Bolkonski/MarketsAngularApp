@@ -9,6 +9,7 @@ export interface Market {
     volume: number,
     netChange: number,
     netChangePercent: number,
+    lastPrice: number,
     createdAt: string, //datetime
     updatedAt: string, //datetime
     id: number

@@ -13,6 +13,10 @@ export class MarketService {
   constructor(private http: HttpClient) { }
 
   getMarkets(queryString:string): Observable<GetManyMarketDto> {
-    return this.http.get<GetManyMarketDto>(`${API_URL}/?${queryString}`)
+    return this.http.get<GetManyMarketDto>(`${API_URL}/?${queryString}`);
+  }
+
+  addMarket(market:Market): Observable<Market> {
+    return this.http.post<Market>(`${API_URL}`,market);
   }
 }

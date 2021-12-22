@@ -5,6 +5,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container{
     width: 80%;
-    height: 90%;
     margin: auto;
+}
+
+.mat-dialog-container{
+    max-width: 500px;
 }

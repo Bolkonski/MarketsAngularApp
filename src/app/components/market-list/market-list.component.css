@@ -2,3 +2,15 @@ table {
     width: 100%;
     margin: 25px 0;
 }
+td{
+    max-width: 300px;
+}
+.mat-elevation-z8{
+    margin-top: 10px;
+}
+#create-btn{
+    margin-top: 2px;
+}
+.actions-cell>button{
+    margin-right: 5px;
+}
