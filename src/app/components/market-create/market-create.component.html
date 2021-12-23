@@ -66,7 +66,6 @@
         <mat-form-field appearance="fill">
             <mat-label>Net Change</mat-label>
             <input matInput type="number" 
-            min="0" (keypress)="numberKeypress($event)"
             formControlName="netChange" required>
             <mat-error *ngIf="formGroup.controls['netChange'].invalid">
                 {{getErrorMessage(formGroup.controls['netChange'])}}
@@ -75,7 +74,6 @@
         <mat-form-field appearance="fill">
             <mat-label>Net Change Percent</mat-label>
             <input matInput type="number" 
-            min="0" (keypress)="numberKeypress($event)"
             formControlName="netChangePercent" required>
             <mat-error *ngIf="formGroup.controls['netChangePercent'].invalid">
                 {{getErrorMessage(formGroup.controls['netChangePercent'])}}
@@ -83,8 +81,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Last Price</mat-label>
-            <input matInput type="number"
-            min="0" (keypress)="numberKeypress($event)"
+            <input matInput type="number" min="0" 
             formControlName="lastPrice" required>
             <mat-error *ngIf="formGroup.controls['lastPrice'].invalid">
                 {{getErrorMessage(formGroup.controls['lastPrice'])}}

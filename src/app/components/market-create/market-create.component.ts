@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { MarketService } from 'src/app/services/market.service';
 
 @Component({
@@ -9,14 +10,14 @@ import { MarketService } from 'src/app/services/market.service';
 })
 export class MarketCreateComponent implements OnInit {
   today: Date;
-  thisYear: number;
   formGroup: FormGroup;
 
-  constructor(private fb: FormBuilder, private service: MarketService) { }
+  constructor(private fb: FormBuilder,
+    public dialogRef: MatDialogRef<MarketCreateComponent>, 
+     private service: MarketService) { }
 
   ngOnInit(): void {
     this.today=new Date();
-    this.thisYear=this.today.getFullYear();
     this.formGroup = this.fb.group({
       name: ['', [Validators.required]],
       symbol: ['', [Validators.required]],
@@ -62,6 +63,10 @@ export class MarketCreateComponent implements OnInit {
       id: 0,
       createdAt: this.today.toString(),
       updatedAt: this.today.toString()
-    }).subscribe(()=>{alert('created')});
+    })
+    .subscribe(()=>{
+      alert('created');
+      this.dialogRef.close();
+    });
   }
 }
