@@ -11,18 +11,26 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSortModule} from '@angular/material/sort';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AppComponent } from './app.component';
 import { MarketListComponent } from './components/market-list/market-list.component';
 import { MarketDetailsComponent } from './components/market-details/market-details.component';
 import { MarketCreateComponent } from './components/market-create/market-create.component';
+import { MarketEditComponent } from './components/market-edit/market-edit.component';
+import { MarketDeleteComponent } from './components/market-delete/market-delete.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarketListComponent,
     MarketDetailsComponent,
-    MarketCreateComponent
+    MarketCreateComponent,
+    MarketEditComponent,
+    MarketDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,10 @@ import { MarketCreateComponent } from './components/market-create/market-create.
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
+    MatSidenavModule,
+    MatSortModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

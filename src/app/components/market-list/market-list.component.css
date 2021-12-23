@@ -9,8 +9,21 @@ td{
     margin-top: 10px;
 }
 #create-btn{
-    margin-top: 2px;
+    margin-top: 5px;
 }
-.actions-cell>button{
+#search-btns{
+    float: right;
+}
+.actions-col>button{
     margin-right: 5px;
+}
+.actions-col{
+    width: 230px;
+}
+.mat-form-field.filter-field{
+    margin: 10px 15px;
+    width: 90%;
+}
+.mat-drawer-container{
+    height: 100%;
 }
