@@ -16,7 +16,19 @@ export class MarketService {
     return this.http.get<GetManyMarketDto>(`${API_URL}/?${queryString}`);
   }
 
+  getMarketById(id:number): Observable<Market> {
+    return this.http.get<Market>(`${API_URL}/${id}`);
+  }
+
   addMarket(market:Market): Observable<Market> {
     return this.http.post<Market>(`${API_URL}`,market);
+  }
+
+  updateMarket(market:Market): Observable<Market> {
+    return this.http.patch<Market>(`${API_URL}/${market.id}`,market);
+  }
+
+  deleteMarket(id:number): Observable<void> {
+    return this.http.delete<void>(`${API_URL}/${id}`);
   }
 }
