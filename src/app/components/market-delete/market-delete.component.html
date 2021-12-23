@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Delete Market</h1>
+<div mat-dialog-content>
+  <p>Are you sure to delete market <strong>{{data.name}}</strong>?</p>  
+</div>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button cdkFocusInitial (click)="deleteMarket()">Delete</button>
+  </mat-dialog-actions>
