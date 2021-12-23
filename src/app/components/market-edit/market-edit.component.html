@@ -1,0 +1,92 @@
+<h1 mat-dialog-title>Edit Market</h1>
+<div mat-dialog-content>
+    <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" required>
+            <mat-error *ngIf="formGroup.controls['name'].invalid">
+                {{getErrorMessage(formGroup.controls['name'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Symbol</mat-label>
+            <input matInput formControlName="symbol" required>
+            <mat-error *ngIf="formGroup.controls['symbol'].invalid">
+                {{getErrorMessage(formGroup.controls['symbol'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Country</mat-label>
+            <input matInput formControlName="country" required>
+            <mat-error *ngIf="formGroup.controls['country'].invalid">
+                {{getErrorMessage(formGroup.controls['country'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Industry</mat-label>
+            <input matInput formControlName="industry" required>
+            <mat-error *ngIf="formGroup.controls['industry'].invalid">
+                {{getErrorMessage(formGroup.controls['industry'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>IPO Year</mat-label>
+            <input matInput type="number" 
+            min="0" (keypress)="numberKeypress($event)"
+            formControlName="ipoYear" required>
+            <mat-error *ngIf="formGroup.controls['ipoYear'].invalid">
+                {{getErrorMessage(formGroup.controls['ipoYear'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Market Cap</mat-label>
+            <input matInput type="number" 
+            min="0" (keypress)="numberKeypress($event)"
+            formControlName="marketCap" required>
+            <mat-error *ngIf="formGroup.controls['marketCap'].invalid">
+                {{getErrorMessage(formGroup.controls['marketCap'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Sector</mat-label>
+            <input matInput formControlName="sector" required>
+            <mat-error *ngIf="formGroup.controls['sector'].invalid">
+                {{getErrorMessage(formGroup.controls['sector'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Volume</mat-label>
+            <input matInput type="number" 
+            min="0" (keypress)="numberKeypress($event)"
+            formControlName="volume" required>
+            <mat-error *ngIf="formGroup.controls['volume'].invalid">
+                {{getErrorMessage(formGroup.controls['volume'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Net Change</mat-label>
+            <input matInput type="number" 
+            formControlName="netChange" required>
+            <mat-error *ngIf="formGroup.controls['netChange'].invalid">
+                {{getErrorMessage(formGroup.controls['netChange'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Net Change Percent</mat-label>
+            <input matInput type="number" 
+            formControlName="netChangePercent" required>
+            <mat-error *ngIf="formGroup.controls['netChangePercent'].invalid">
+                {{getErrorMessage(formGroup.controls['netChangePercent'])}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Last Price</mat-label>
+            <input matInput type="number" min="0"
+            formControlName="lastPrice" required>
+            <mat-error *ngIf="formGroup.controls['lastPrice'].invalid">
+                {{getErrorMessage(formGroup.controls['lastPrice'])}}
+            </mat-error>
+        </mat-form-field>
+        <button type="submit" mat-flat-button color="primary">Submit</button>
+    </form>
+</div>
